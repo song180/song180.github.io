@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html, div, p, a,body,span,ul,li,h1,input,img{
+				padding: 0;
+				margin: 0;
+			} 
+			body{
+				font-size:'Microsoft YaHei';
+			}
+			.loginT{
+				height: 120px;
+				width: 1000px;			
+				margin: 0 auto 0;
+			}
+			.loginT a img{
+				float: left;
+				margin: 20px;
+			}
+			.loginT a p{
+				float: left;
+				height: 44px;
+				width: 165px;
+				margin: 40px 0px;
+				font-size: 14px;
+				color: #666;
+			}
+			.loginT .register-bar{
+				height: 44px;
+				width: 230px;
+				float: right;
+				margin: 40px 20px;
+				font-size: 16px;
+				color: #666;
+			}
+			.loginT .register-bar span{
+				font-size: 16px;
+				color: #666;
+			}
+			.loginT .register-bar a{
+				font-size: 14px;
+				color: #cd1f1f;
+				text-decoration: none;
+				padding: 4px;
+			}
+			.loginT .register-bar .aaa:hover{
+				font-size: 14px;
+				background-color: #cd1f1f;
+				text-decoration: none;
+				color: white;
+			}
+			
+			.loginC{
+				height: 348px;
+				width: 1000px;			
+				margin: 0 auto 0;
+			}
+			.loginC .loginimg{
+		
+				float: left;
+			}
+			.loginC .loginLeft{
+				height: 346px;
+				width: 480px;
+				border: 1px solid #E6E6E6;
+				float: left;
+			}
+			.loginC .loginLeft .loginLc{
+				margin: 20px 95px;
+			}
+			.loginC .loginLeft .loginLc p{
+				
+				margin: 23px 0;
+				font-size: 16px;
+			}
+			.loginC .loginLeft .loginLc a{
+				float: right;
+				text-decoration: none;
+				font-size: 12px;
+			}
+			.loginC .loginLeft .loginLc a:hover{
+				color: #C40000;
+			}
+			.loginC .loginLeft .loginLc input{
+				height: 38px;
+				width: 280px;	
+				margin: 6px 0;
+			}
+			.loginC .loginLeft .loginLc .aa{
+				color: #134ba0;
+				margin: 5px 0;
+			}
+			.loginC .loginLeft .loginLc #longin-btn{
+				background-color: #db2e2e;
+				height: 40px;
+				width: 280px;	
+				margin: 6px 0;
+				color: white;
+				font-size: 16px;
+				font-weight: 800;
+			}
+			.loginC .loginLeft .loginLc #longin-btn:hover{
+				background-color: #c31c1c;
+			}
+			.loginB{
+				margin: 0 auto 0;
+				height: 36px;
+				width: 1280px;
+				border-top:1px solid #EDEDED ;
+				margin-top: 80px;
+				margin-bottom: 100px;
+			}
+			.loginB p{
+				margin:40px 150px 0 150px;
+				color: #666;
+				font-size: 13px;
+			}
+			.loginB a{
+				text-decoration: none;	
+				color: #666;
+				margin: 0 6px;			
+			}
+			.loginB a:hover{
+				color: #C31C1C;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="loginT">
+			<a title="ZOL商城" href="#">
+				<img src="img/logo1.png" height="60px" width="200px"/>
+				<p>中关村在线旗下网上商城</p>
+				<div class="register-bar">
+					<span>还没有ZOL商城账号？</span>
+					<a href="#" class="aaa">立即注册</a>
+				</div>			
+			</a>
+		</div>
+		
+		<!--内容-->
+		<div class="loginC">
+			<div class="loginimg">
+				<a href=""><img src="img/ad2.jpg"/ height="348px" width="518px"></a>
+			</div>
+			<div class="loginLeft">
+				<div class="loginLc">
+					<p>登录ZOL商城<a href="#">手机动态码登录</a></p>
+					<input type="text" id="urser" placeholder="手机号/邮箱/用户名" />
+					<input type="text" id="password" placeholder="密码"/>
+					<a href="#" class="aa">忘记密码？</a>
+					<button id="longin-btn">登录</button>
+					<a href=""><img src="img/loginbtn.png"/></a>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		<!--尾部-->
+		<div class="loginB">
+			<p><a href="">关于ZOL商城</a>| <a href="">联系我们</a>| <a href="">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;©2016. 中关村在线 版权所有</p>
+		</div>
+	</body>
+</html>

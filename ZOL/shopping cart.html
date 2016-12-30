@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style>
+			
+			.clearfix:after {
+				display: block;
+				height: 0;
+				content: '';
+				clear: both;
+			}
+			
+			body {
+				font-size: 14px;
+				font-family: "microsoft yahei";
+				color: #666;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+			
+			li {
+				list-style: none;
+			}
+			.container {
+				height: 100%;
+				background-color: #fff;
+			}
+			.container .top-nav {
+				width: 100%;
+				margin: 0 auto;
+				height: 32px;
+				text-align: center;
+				background-color: #f4f4f4;
+			}
+			.cart {
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.cart .cart-top img {
+				width: 1000px;
+				height: 131px;
+			}
+			
+			/*cart-main*/
+			.cart-main {
+				padding: 25px;
+				background-color: #fff;
+			}
+			.cart-main li.td {
+				float: left;
+				width: 120px;
+			}
+			.cart-main li.td-checkbox {
+				width: 46px;
+			}
+			.cart-main li.td-gname {
+				width: 330px;
+			}
+			.cart-main li.td-gstyle {
+				width: 145px;
+				padding-right: 15px;
+			}
+			.cart-main li.td-gprice {
+				width: 140px;
+			}
+			.cart-main li.td-gamount {
+				width: 130px
+			}
+			.cart-main li.td-gmoney {
+				width: 75px;
+			}
+			.cart-main li.td-option {
+				width: 69px;
+			}
+			
+			
+			/*cart-title*/
+			.cart-main .cart-main-title {
+				line-height: 50px;
+			}
+			
+			.cart-main .cart-main-title .td-checkbox input {
+				vertical-align: -2px;
+			}
+			.cart-main .cart-main-title .td-inner {
+				padding-left: 91px;
+			
+			}
+			.cart-main a {
+				color: #3c3c3c;
+			}
+			.cart-main a:hover {
+				color: #f40;
+				text-decoration: underline;
+			} 
+			
+			/*cart-goods-item*/
+			.cart-goods-item {
+				padding: 10px 0;
+				border-bottom: 1px solid #ccc;
+			}
+			.cart-goods-item .td-inner .goods-img {
+				float: left;
+				width: 80px;
+				height: 80px;
+			}
+			.cart-goods-item .td-gname .goods-img img
+			 {
+				width: 80px;
+				height: 80px;
+			}
+			.cart-goods-item .td-gname .goods-name {
+				margin-left: 91px;
+				padding-right: 20px;
+			} 
+			.cart-goods-item .td-amount-wrapper {
+				width: 77px;
+				height: 80px;
+				position: relative;
+			}
+			.cart-goods-item .td-amount-wrapper .amount-option {
+				position: absolute;
+				top: 0;
+				width: 17px;
+				height: 25px;
+				line-height: 25px;
+				text-align: center;
+				border: 1px solid #ccc;
+				color: #000;
+			}
+			.cart-goods-item .td-amount-wrapper .amount-decrease {
+				left: 0;
+				cursor: pointer;
+			}
+			.cart-goods-item .td-amount-wrapper .amount-input{
+				width: 39px;
+				left: 19px;
+				border-color: #888;
+				outline: none;
+			}
+			.cart-goods-item .td-amount-wrapper .amount-increase {
+				right: 0;
+				cursor: pointer;
+			}
+			.cart-goods-item .td-amount-wrapper span:hover {
+				border-color: #f60;
+				color: #f60;
+			}
+			.cart-goods-item .td-gmoney {
+				color: #f60;
+				font-weight: 700;
+			}
+			
+			/*cart option*/
+			.cart-option {
+				height: 50px;
+				line-height: 50px;
+				margin-top: 30px;
+				border-top: 1px solid #ccc;
+			}
+			.cart-option .options {
+				float: left;
+			}
+			.cart-option .options .options-item {
+				float: left;
+				margin:0 30px 0 10px;
+			}
+			.cart-option .cart-info {
+				float: right;
+			}
+			.cart-option .cart-info .info-item {
+				float:left;
+				margin-left: 20px;
+			}
+			.cart-option .cart-info .info-item span {
+				font-size: 26px;
+				color: #f40;
+				padding: 0 5px;
+			}
+			.cart-option .cart-info .go-pay {
+				width: 120px;
+				text-align: center;
+				background-color: #aaa;
+				color: #fff;
+				font-size: 18px;
+				letter-spacing: 10px;
+				cursor: not-allowed;
+			}
+			.cart-option .cart-info .go-pay.can-pay {
+				cursor: pointer;
+				background-color: #f40;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<div class="container">				
+			<!--顶部-->			
+			<div class="zc-topbar">
+				<div class="wrapper-clearfix">
+					<div class="zc-login-info"> 
+						<span class="zc-back-home">
+							<a href="#">商城首页</a>
+						</span> 
+						<span class="zc-login">
+							Hi~欢迎来到ZOL商城，请<a href="#">登录</a>
+						</span> 
+						<span class="zc-register">
+							<a href="#">免费注册</a>
+						</span> 
+					</div>						
+				</div>	
+				
+				<ul class="zc-menu">
+					<li class="item">
+						<a href="#">我的订单</a>
+					</li>
+					<li class="zc-menu-center">
+						<a href="#" class="zc-hd">买家中心</a>
+						<div class="zc-menu-center-no">
+							<a href="#">关注的店铺&nbsp;&nbsp;&nbsp;</a>
+							<br/>
+							<a href="#">关注的商品&nbsp;&nbsp;&nbsp;</a>
+						</div>
+					</li>					
+					<li class="item">
+						<a href="#">购物车0件</a>					
+					</li>
+					<li class="item">
+						<a href="#">帮助中心</a>
+					</li>
+					<li>
+						<a href="#">|</a>					
+					</li>
+					<li class="zc-menu-center">
+						<a href="#" class="zc-hd">手机商城</a>
+						<div class="zc-menu-center-no">
+							<img src="img/erweima.jpg" />
+						</div>
+					</li>
+					<li class="item">
+						<a href="home page.html">中关村在线</a>
+					</li>
+					<li class="item">
+						<a href="#">商家入驻</a>
+					</li>
+					<li class="zc-menu-center">
+						<a href="#" class="zc-hd">联系客户</a>
+						<div class="zc-menu-center-no">
+							<span>&nbsp;400-678-0028&nbsp;</span>
+						</div>
+					</li>
+				</ul>			
+			</div>	
+			
+			<!--头部-->
+			<div class="header-clearfix">
+				<div class="logo">
+						<a title="ZOL商城" href="#">
+							<img src="img/logo1.png"/>
+						</a>
+					<!-- 地址定位 -->
+					<div class="logo-right-box">
+						<div href="#" class="city-location">
+							<span class="city-name">全国</span>
+							<div class="city-list">
+								<ul>
+									<li>北京</li>
+									<li>成都</li>
+									<li>青岛</li>
+									<li>沈阳</li>
+									<li>全国</li>
+								</ul>
+							</div>							
+						</div>
+						<p><img src="img/logo2.png"/></p>
+					</div>		
+				</div>
+				
+				<!--搜索栏-->
+			<div class="search-box">
+				<form>
+					<input type="hidden" name="c" value="List">
+					<div class="search">
+						<input name="keyword" type="text" class="search-text" value=""><input type="submit" value="搜 索" class="search-btn"></div>
+					<input type="hidden" name="spm" value="921">
+				</form>
+				<!-- 搜索热词 搜索推荐 -->
+				<div class="hot-search" >
+					<a href="#">iPhone 7</a>
+					<a href="#">乐视</a>
+					<a href="#">华为</a>
+					<a href="#">GTX1060</a>
+					<a href="#">热门游戏本</a>
+					<a href="#">热销机械键盘</a>
+				</div>
+		
+				<!-- end  -->
+				</div>
+				<div class="ad-div">
+					<a href="#">
+						<img src="img/logo3.jpg">
+					</a>
+				</div>
+			</div>
+			
+			<!--顶部-->
+			<div class="header">
+				<div class="line-l">商品分类</div>
+				<div class="line-r">					
+					<ul class="nav-clearfix">
+	                    <li><a href="#">首页</a></li>
+	                    <li><a href="#">团购</a></li>
+	                    <li><a href="#">ZOL智选</a></li>
+	                    <li><a href="#">DIY攒机馆</a></li>	     
+					</ul>	
+					<div class="nav-tips">
+						<a href="#">感恩特惠，华为Mate 9暖心上市！限量抢！</a>
+					</div>
+					<div class="nav-he"></div>
+				</div>
+			</div>
+			
+			<div class="container">
+			<div class="cart">
+				<div class="cart-main">
+					<!--标题-->
+					<div class="cart-main-title">
+						<ul class="clearfix">
+							<li class="td td-checkbox">
+								<input type="checkbox" class="select-all-btn"/>
+								<span>全选</span>
+							</li>
+							<li class="td td-gname">
+								<div class="td-inner">商品</div>
+							</li>
+							<li class="td td-gstyle">商品信息</li>
+							<li class="td td-gprice">单价</li>
+							<li class="td td-gamount">数量</li>
+							<li class="td td-gmoney">金额</li>
+							<li class="td td-option">操作</li>
+						</ul>
+					</div>
+					<!--商品区-->
+					<div class="cart-main-content">
+						
+					</div>
+					<!--操作区-->
+					<div class="cart-option clearfix">
+						<div class="options clearfix">
+							<div class="options-item select-all">
+								<input type="checkbox" class="select-all-btn">
+								<span>全选</span>
+							</div>
+							<div class="options-item delete">
+								<a href="#">删除</a>
+							</div>
+						</div>
+						<div class="cart-info clearfix">
+							<div class="info-item goods-amount">
+								已选商品<span class="user-goods-amount">0</span>件
+							</div>
+							<div class="info-item goods-money">
+								合计：不含运费<span class="user-goods-money">0.00</span>
+							</div>
+							<div class="info-item go-pay">结算</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+			
+			
+			
+			<!--尾部-->
+			<div class="footer">
+				<div class="footer1 foot">
+					<dl>
+						<dt>购物指南</dt>
+						<dd>
+							<p>
+								<a href="#">帐号注册</a>
+							</p>
+							<p>
+								<a href="#">购物流程</a>
+							</p>
+							<p>
+								<a href="#">付款方式</a>
+							</p>
+					
+						</dd>
+					</dl>
+				</div>
+				<div class="footer2 foot">
+					<dl>
+						<dt>售后服务</dt>
+						<dd>
+							<p>
+								<a href="#">帐号注册</a>
+							</p>
+							<p>
+								<a href="#">购物流程</a>
+							</p>
+							<p>
+								<a href="#">投诉举报</a>
+							</p>
+							
+						</dd>
+					</dl>
+				</div>
+				<div class="footer3 foot">
+					<dl>
+						<dt>商城保障</dt>
+						<dd>
+							<p>
+								<a href="#">行货保障</a>
+							</p>
+							<p>
+								<a href="#">发票保障</a>
+							</p>
+							
+							<p>
+								<a href="#">购物流程</a>
+							</p>
+							<p>
+								<a href="#">物流配送</a>
+							</p>
+					
+						</dd>
+					</dl>
+				</div>
+				<div class="footer4 foot">
+					<dl>
+						<dt>商家服务</dt>
+						<dd>
+							<p>
+								<a href="#">商家中心</a>
+							</p>
+							<p>
+								<a href="#">商家规则</a>
+							</p>
+							<p>
+								<a href="#">商家帮助</a>
+							</p>
+	
+					
+						</dd>
+					</dl>
+				</div>
+				<div class="footer5 foot">
+					<img src="img/jie1.png"/>
+				</div>
+				<div class="footer6 foot">
+					<dt>商家合作</dt>
+					<dl>
+						<dd>
+							<p>
+								<a href="#">错过天猫？别再错过我们！</a>
+							</p>
+							<p>
+								<a href="#">ZOL商城开启全新旅程！</a>
+							</p>
+							<p>
+								<a href="#" class="pa">关于入驻 ></a>
+							</p>
+						</dd>	
+					</dl>
+							
+				</div>
+			</div>
+			<div class="inners">
+				<div class="partners" style="height:auto;">
+					<span class="label">合作伙伴：</span>
+					<!--<span class="more more-open">更多</span>-->
+					<p>
+						<a href="#">电子商务平台</a>|
+						<a href="#">卷皮网</a>|
+						<a href="#">华为商城</a>|
+						<a href="#">中国电子银行网</a>|
+						<a href="#">三帝贸易网</a>|
+						<a href="#">团购</a>|
+						<a href="#">eNet商城</a>|
+						<a href="#">家具网</a>|
+						<a href="#">易趣</a>|
+						<a href="#">手表品牌大全</a>|
+						<a href="#">钻石</a>|
+						<a href="#">伊秀女性网</a>|
+						<a href="#">电子产品世界</a>|
+						<a href="#">广告网</a>|
+						<a href="#">易购网</a>|
+						<a href="#">华强电子网</a>|
+						<a href="#">挖东西比价网</a>|
+					</p>
+				</div>
+				
+				<div class="footer-nav">
+					<a href="#">中关村在线</a>
+					|
+					<a href="#">ZOL商城</a>
+					|
+					<a href="#">团购</a>
+					|
+					<a href="#">限时抢购</a>
+					|
+					<a href="#">经销商</a>
+					|
+					<a href="#">产品报价</a>
+					|
+					<a href="#">论坛</a>
+					|
+					<a href="#">问答</a>
+				</div>
+				<div class="copyright">
+					<a href="#">关于ZOL商城</a>
+					|
+					<a href="#">帮助中心</a>
+					|
+					<a href="#">联系我们</a>
+					|
+					<a href="#">发展历程</a>
+					|
+					<a href="#">媒体报道</a>
+				</div>
+				<div class="copyright">
+					<span style="margin-left:-5px;">
+	                     <a href="#"> ©2016 中关村在线 版权所有.</a>   
+						<a href="#">京ICP证150096号</a>
+						<a href="#">京ICP证150096号</a>
+						<a href="#">京公网安备11010802020026号</a>
+						<a href="#">网络文化经营许可证京网文[2016]1631-199</a>
+					</span>
+				</div>
+			
+			</div>
+			
+		</div>
+		<script src="js/jquery.1.11.3.min.js"></script> 
+		<script src="js/jquery.cookie.js"></script> 
+		<script src="js/cart.js"></script>
+	</body>
+</html>
